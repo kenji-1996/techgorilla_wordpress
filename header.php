@@ -10,19 +10,7 @@
 
     <title><?php echo get_bloginfo( 'name' ); ?></title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="<?php echo get_bloginfo('template_directory'); ?>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom fonts for this template -->
-    <link href="<?php echo get_bloginfo('template_directory'); ?>/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
-
-    <!-- Plugin CSS -->
-    <link href="<?php echo get_bloginfo('template_directory'); ?>/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="<?php echo get_bloginfo('template_directory'); ?>/css/creative.min.css" rel="stylesheet">
+	
 	<?php wp_head();?>
   </head>
 

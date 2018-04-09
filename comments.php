@@ -1,8 +1,9 @@
 <?php if ( post_password_required() ) {
 	return;
 } ?>
-	<div id='comments-outer'  style='padding: 10px;'>
+	<div id='comments-outer'  style='padding: 20px;'>
 		<hr>
+		<h6>Comments</h6>
 		<div id="comments" class="">
 			<div class="form-group">
 			<style>
@@ -17,22 +18,39 @@
 				function my_comments_callback( $comment, $args, $depth ) {
 					$GLOBALS['comment'] = $comment;
 					$comment_author_email = get_comment_author_email();
-					$post_author_email = get_the_author_meta('user_email');?>
+					$post_author_email = get_the_author_meta('user_email');
+			?>
 					
 						<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>" style='padding: 5px;'>
-						<article id="comment-<?php comment_ID(); ?>" class="comment card">
-							<div class=" card-body">
-							<h5 class="card-title"><?php echo get_comment_author( $comment_ID ); ?></h5>
-							<?php if ( $comment_author_email == $post_author_email ) { ?>
-							<h6 class="card-subtitle mb-2 text-muted">Author</h6>
-							<?php } ?>
-								<?php comment_text(); ?>
-								<div class="btn btn-light">
-									<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply <span>&darr;</span>', 'twentyeleven' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+							<article id="comment-<?php comment_ID(); ?>" class="comment card">
+								<div class='card-header'>
+									<div class='row'>
+										<div class='col-sm-6'>
+											<h5>
+												<?php echo get_comment_author( $comment_ID ); ?>
+												<?php if ( $comment_author_email == $post_author_email ) { ?>
+													<h6 class="badge badge-primary">Author</h6>
+												<?php }else{ ?>
+													<h6 class="badge badge-secondary">Reader</h6>
+												<?php } ?>
+											</h5>
+										</div>
+										<div class='col-sm-6 text-right'>
+											<img src="<?php echo get_avatar_url( $comment_author_email ); ?>" alt="Avatar" class="avatar">
+										</div>
+									</div>
 								</div>
-							</div>
-						</article>
-					</li>
+								
+								<div class=" card-body">
+									<h5 class="card-title"></h5>
+									
+									<?php comment_text(); ?>
+									<div class="btn btn-light">
+										<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply <span>&darr;</span>', 'twentyeleven' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+									</div>
+								</div>
+							</article>
+						</li>
 			<?php } ?>
 			<?php if ( have_comments() ) : ?>
 				<?php 
