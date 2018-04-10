@@ -46,7 +46,7 @@
 									
 									<?php comment_text(); ?>
 									<div class="btn btn-light">
-										<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply <span>&darr;</span>', 'twentyeleven' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+										<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply <span>&darr;</span>', 'techgorilla' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 									</div>
 								</div>
 							</article>
@@ -84,7 +84,7 @@
 					'id_submit'         => 'submit',
 					'class_submit'      => 'submit',
 					'name_submit'       => 'submit',
-					'submit_button'     => '<input name="%1$s" type="submit" id="%2$s" style="padding: 1-" class="btn btn-primary" value="%4$s" />',
+					'submit_button'     => '<br/><input name="%1$s" type="submit" id="%2$s" style="padding: 1-" class="btn btn-primary" value="%4$s" />',
 					'title_reply'       => '',
 					'title_reply_to'    => __( 'Reply to %s','text-domain' ),
 					'cancel_reply_link' => __( 'Cancel comment','text-domain' ),

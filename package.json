@@ -1,8 +1,8 @@
 {
-    "title": "Creative",
-    "name": "startbootstrap-creative",
-    "version": "4.0.0",
-    "description": "Creative is a stylish one page HTML theme for Bootstrap.",
+    "title": "TechGorillaTheme",
+    "name": "techgorilla_wordpress",
+    "version": "0.0.1",
+    "description": "Adapation of 'Creative' bootstrap theme for Wordpress",
     "keywords": [
         "css",
         "sass",
@@ -11,19 +11,19 @@
         "theme",
         "template"
     ],
-    "homepage": "https://startbootstrap.com/template-overviews/creative",
+    "homepage": "https://techgorilla.io",
     "bugs": {
-        "url": "https://github.com/BlackrockDigital/startbootstrap-creative/issues",
+        "url": "https://github.com/kenji-1996/techgorilla_wordpress/issues",
         "email": "feedback@startbootstrap.com"
     },
     "license": "MIT",
-    "author": "Start Bootstrap",
+    "author": "TechGorilla",
     "contributors": [
-        "David Miller (http://davidmiller.io/)"
+        "Callum Chisholm (http://davidmiller.io/)"
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/BlackrockDigital/startbootstrap-creative.git"
+        "url": "https://github.com/kenji-1996/techgorilla_wordpress.git"
     },
     "dependencies": {
         "bootstrap": "4.0.0",

@@ -1,21 +1,39 @@
 <?php get_header(); ?>
 
-	<div class="row">
+<?php
+$sidebar = get_post_meta( get_the_ID(), 'tg_sidebarToggle', TRUE );
+$layout = get_post_meta( get_the_ID(), 'tg_layout', TRUE );
 
-		<div class="col-sm-12">
+if($sidebar) {?>
+    <div class="container">
+    <div class="row">
 
-			<?php 
-			if ( have_posts() ) : while ( have_posts() ) : the_post();
-  	
-				get_template_part( 'content-single', get_post_format() );
-  
-			endwhile; endif; 
-			?>
+        <div class="col-sm-8">
+<?php } ?>
+<?php if(!$sidebar && $layout == 'container') { ?>
+    <div class="container">
+<?php } ?>
 
-		</div>
+<?php
+    if ( have_posts() ) : while ( have_posts() ) : the_post();
 
-		<?php //get_sidebar(); ?>
+        get_template_part( 'content-single', get_post_format() );
 
-	</div>
+    endwhile; endif;
+?>
+
+<?php if($sidebar) {?>
+
+        </div>
+    <?php get_sidebar(); ?>
+    </div>
+</div>
+
+<?php } ?>
+
+<?php if(!$sidebar && $layout == 'container') { ?>
+    </div>
+<?php } ?>
+
 
 <?php get_footer(); ?>
