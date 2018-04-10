@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
 <?php
-$sidebar = get_post_meta( get_the_ID(), 'tg_sidebarToggle', TRUE );
-$layout = get_post_meta( get_the_ID(), 'tg_layout', TRUE );
+$sidebar = get_post_meta( get_the_ID(), '_techgorilla_sidebar', TRUE );
+$layout = get_post_meta( get_the_ID(), '_techgorilla_layout', TRUE );
 
 if($sidebar) {?>
     <div class="container">

@@ -45,8 +45,20 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <?php //wp_list_pages( '&title_li=' ); ?>
+            <?php
+            wp_nav_menu( array(
+                'theme_location'    => 'my-custom-menu',
+                'depth'             => 2,
+                'container'         => false,
+                'container_class'   => 'collapse navbar-collapse',
+                'container_id'      => 'bs-example-navbar-collapse-1',
+                'menu_class'        => 'ml-auto navbar-nav',
+                'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+                'walker'            => new WP_Bootstrap_Navwalker()
+            ) );
+            ?>
+            <!--<ul class="navbar-nav ml-auto">
+
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="#about">About</a>
                 </li>
@@ -59,7 +71,7 @@
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
                 </li>
-            </ul>
+            </ul>-->
         </div>
     </div>
 </nav>
@@ -72,7 +84,7 @@
 				<h1 class="text-uppercase">
 				  <strong><?php
                       if(is_front_page()) {
-				        echo "Front Page";
+				        echo get_bloginfo( 'name' );
                       }else{
 				        echo the_title();
                       }
@@ -86,5 +98,3 @@
 			</div>
 		  </div>
     </header>
-
-<?php //if(has_post_thumbnail()){ echo 'contenthead'; }else{ echo 'pagehead'; } ?>
