@@ -20,7 +20,7 @@
                 );
 
                 while ( $the_query->have_posts() ) : $the_query->the_post();
-                    echo '<div>' . get_the_title() . '</div>';
+                    echo '<div id="title">' . get_the_title() . '</div>';
                     the_content();
                 endwhile;
 
