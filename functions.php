@@ -17,7 +17,12 @@ add_action( 'wp_enqueue_scripts', 'techgorilla_styles' );
 
 //Include scripts
 function techgorilla_scripts() {
-    wp_enqueue_script( 'jquery', get_template_directory_uri() . '/vendor/jquery/jquery.min.js' );
+    //wp_enqueue_script( 'jquery', get_template_directory_uri() . '/vendor/jquery/jquery.min.js' );
+	if(!is_admin()) {//Replace jquery with googles CDN
+    	wp_deregister_script( 'jquery' );
+    	wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js');
+    }
+    wp_enqueue_script('jquery');
     wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/vendor/bootstrap/js/bootstrap.min.js', array( 'jquery','scrollreveal' ), '3.3.6', true );
     wp_enqueue_script( 'jquery-easing', get_template_directory_uri() . '/vendor/jquery-easing/jquery.easing.min.js' );
     wp_enqueue_script( 'scrollreveal', get_template_directory_uri() . '/vendor/scrollreveal/scrollreveal.min.js' );

@@ -8,7 +8,11 @@ remove_filter( 'the_excerpt', 'wpautop' );
 <style>
     header.masthead {
         background:linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url("<?php echo get_option('frontimage');  ?>");
-
+		background-position: center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
     }
 </style>
     <header class="masthead text-center text-white d-flex">
