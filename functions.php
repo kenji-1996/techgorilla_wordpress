@@ -393,8 +393,8 @@ function wpb_widgets_init() {
     ) );
 
     register_sidebar( array(
-        'name' =>__( 'Front page sidebar', 'wpb'),
-        'id' => 'sidebar-2',
+        'name' =>__( 'Front page widgets', 'wpb'),
+        'id' => 'frontpage-widgets',
         'description' => __( 'Appears on the static front page template', 'wpb' ),
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget' => '</aside>',

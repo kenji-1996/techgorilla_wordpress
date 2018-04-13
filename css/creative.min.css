@@ -1,3 +1,61 @@
+/*start footer*/
+#wrap {
+    /*min-height: 100%;*/
+    background-color: #fff;
+    font-size: 13px;
+}
+#main {
+    overflow:auto;
+    padding-bottom:170px; /* this needs to be bigger than footer height*/
+}
+.site-title {
+    text-transform: uppercase;
+}
+.angle-div {
+    padding-bottom: 30px;
+    margin-top: -10px;
+    -webkit-clip-path: polygon(50% 100%, 100% calc(100% - 3vw), 100% 0, 0 0, 0 calc(100% - 3vw));
+    clip-path: polygon(50% 100%, 100% calc(100% - 3vw), 100% 0, 0 0, 0 calc(100% - 3vw));
+}
+footer {
+    font-family: 'roboto condensed',sans-serif;
+}
+#floatfooter .footer {
+    position: relative;
+    margin-top: -150px; /* negative value of footer height */
+    height: 150px;
+    padding-top:20px;
+    background-color: rgba(10,10,10,1);
+    color: #fff;
+    font-family: 'roboto condensed',sans-serif;
+}
+#floatfooter .footer .footer-bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.dark-theme {
+    background-color: rgba(10,10,10,1);
+    color: #fff;
+    font-family: 'roboto condensed',sans-serif;
+}
+.margin-sides-none {
+    margin-left: 0;
+    margin-right: 0;
+}
+.col-centered{
+    margin: 0 auto;
+    float: none;
+}
+.alignleft {
+    float: left;
+}
+.alignright {
+    float: right;
+}
+/*end footer*/
 body,
 html {
     width: 100%;
@@ -145,8 +203,6 @@ img::-moz-selection {
 #mainNav .site-description:hover {
     color: #fff;
 }
-
-
 
 #mainNav {
     border-bottom: 1px solid rgba(33, 37, 41, 0.1);

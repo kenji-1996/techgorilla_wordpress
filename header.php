@@ -30,61 +30,56 @@
 
 </head>
 
-<body id="page-top">
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="container">
-        <div class='navbar-main-name'>
-            <div class='site-title'>
-                <a class="navbar-brand js-scroll-trigger" href="<?php echo get_bloginfo( 'wpurl' );?>"><?php echo get_bloginfo( 'name' ); ?></a>
-            </div>
-            <div class='site-description'>
-                <p><?php echo get_bloginfo( 'description' ); ?></p>
-            </div>
-        </div>
-
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <?php
-            wp_nav_menu( array(
-                'theme_location'    => 'my-custom-menu',
-                'depth'             => 2,
-                'container'         => false,
-                'container_class'   => 'collapse navbar-collapse',
-                'container_id'      => 'bs-example-navbar-collapse-1',
-                'menu_class'        => 'ml-auto navbar-nav',
-                'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-                'walker'            => new WP_Bootstrap_Navwalker()
-            ) );
-            ?>
-        </div>
-    </div>
-</nav>
-
-<div>
-
-
-
-
-
-    <?php if(!is_front_page()) { ?>
-    <header class="contenthead text-center text-white d-flex">
-        <div class="container my-auto" style="">
-            <div class="row">
-                <div class="col-lg-10 mx-auto">
-                    <?php if( ! empty( $post->post_title ) ) { ?>
-                    <h1 class="text-uppercase">
-                        <strong><?php the_title(); ?></strong>
-                    </h1>
-                    <hr>
-                    <?php } ?>
+<body id="page-top" style="background-color: rgba(10,10,10,1);">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <div class='navbar-main-name'>
+                <div class='site-title'>
+                    <a class="navbar-brand js-scroll-trigger" href="<?php echo get_bloginfo( 'wpurl' );?>"><?php echo get_bloginfo( 'name' ); ?></a>
                 </div>
-                <!--<div class="col-lg-8 mx-auto">
-				    <p class="text-faded mb-5"><?php the_date(); ?> by <a href="#"><?php the_author(); ?></p>
-			    </div>-->
+                <div class='site-description'>
+                    <p><?php echo get_bloginfo( 'description' ); ?></p>
+                </div>
+            </div>
+
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <?php
+                wp_nav_menu( array(
+                    'theme_location'    => 'my-custom-menu',
+                    'depth'             => 2,
+                    'container'         => false,
+                    'container_class'   => 'collapse navbar-collapse',
+                    'container_id'      => 'bs-example-navbar-collapse-1',
+                    'menu_class'        => 'ml-auto navbar-nav',
+                    'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+                    'walker'            => new WP_Bootstrap_Navwalker()
+                ) );
+                ?>
             </div>
         </div>
-    </header>
-    <?php } ?>
+    </nav>
+
+    <div id="wrap">
+        <?php if(!is_front_page()) { ?>
+        <header class="contenthead text-center text-white d-flex">
+            <div class="container my-auto" style="">
+                <div class="row">
+                    <div class="col-lg-10 mx-auto">
+                        <?php if( ! empty( $post->post_title ) ) { ?>
+                        <h1 class="text-uppercase">
+                            <strong><?php the_title(); ?></strong>
+                        </h1>
+                        <hr>
+                        <?php } ?>
+                    </div>
+                    <!--<div class="col-lg-8 mx-auto">
+                        <p class="text-faded mb-5"><?php the_date(); ?> by <a href="#"><?php the_author(); ?></p>
+                    </div>-->
+                </div>
+            </div>
+        </header>
+        <?php } ?>
 

@@ -32,7 +32,7 @@ remove_filter( 'the_excerpt', 'wpautop' );
         </div>
     </header>
 
-<?php dynamic_sidebar( 'sidebar-2' ); ?>
+<?php dynamic_sidebar( 'frontpage-widgets' ); ?>
 <?php
     if ( have_posts() ) : while ( have_posts() ) : the_post();
 
