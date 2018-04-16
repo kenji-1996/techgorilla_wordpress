@@ -49,8 +49,9 @@
 
 
         </div>
-
-        <?php get_sidebar(); ?>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+            <?php get_sidebar(); ?>
+        </div>
 
     </div>
 </div>

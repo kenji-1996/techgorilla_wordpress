@@ -22,9 +22,21 @@
             background-size: cover;
         }
         header.contenthead {
-            padding-bottom: <?php if( ! empty( $post->post_title ) ) { echo 'calc(10rem - 56px)'; }else{ echo 'calc(1rem - 56px)';  } ?>;
-            height: <?php if( ! empty( $post->post_title ) ) { echo '30vh'; }else{ echo '5vh';  } ?>;
-            min-height: <?php if( ! empty( $post->post_title ) ) { echo '300px'; }else{ echo '5px';  } ?>;
+             <?php
+            if(have_posts() && is_archive() )
+            {
+                echo 'padding-bottom: calc(10rem - 56px);';
+                echo 'height: 30vh;';
+                echo 'min-height: 300px;';
+            }else if(is_search()){
+                echo 'padding-bottom: calc(10rem - 56px)';
+                echo 'height: 30vh;';
+                echo 'min-height: 300px;';
+            }else{
+                echo 'padding-bottom: calc(1rem - 56px)';
+                echo 'height: 5vh;';
+                echo 'min-height: 5px;';
+            } ?>;
         }
     </style>
 
@@ -68,11 +80,31 @@
             <div class="container my-auto" style="">
                 <div class="row">
                     <div class="col-lg-10 mx-auto">
-                        <?php if( ! empty( $post->post_title ) ) { ?>
-                        <h1 class="text-uppercase">
-                            <strong><?php the_title(); ?></strong>
-                        </h1>
-                        <hr>
+                        <?php if ( have_posts() && is_archive()) { ?>
+                            <h1 class="text-uppercase">
+                                <strong>
+                                 <?php the_archive_title( ); ?>
+                                </strong>
+                            </h1>
+                            <hr>
+                        <?php } else if(is_search()) { ?>
+                            <h1 class="text-uppercase">
+                                <?php if(have_posts()) { ?>
+                                    <strong>Results:
+                                        <?php the_search_query(); ?>
+                                    </strong>
+                                <?php }else{ ?>
+                                    <strong>
+                                        <?php _e( 'Nothing Found', 'techgorilla' ); ?>
+                                    </strong>
+                                <?php } ?>
+                            </h1>
+                            <hr>
+                        <?php }else if (! empty( $post->post_title )) { ?>
+                            <h1 class="text-uppercase">
+                                <strong><?php the_title(); ?></strong>
+                            </h1>
+                            <hr>
                         <?php } ?>
                     </div>
                     <!--<div class="col-lg-8 mx-auto">
