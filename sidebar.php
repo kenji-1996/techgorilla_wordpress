@@ -1,4 +1,5 @@
 <!--<div class="col-sm-3 col-sm-offset-1 blog-sidebar">-->
+<div id='content-outer' style='padding: 10px;'>
 	<div class="sidebar-module sidebar-module-inset">
 	<h4>About</h4>
 	<p><?php the_author_meta( 'description' ); ?> </p>
@@ -16,4 +17,5 @@
             <li><a href="<?php echo get_option('twitter'); ?>">Twitter</a></li>
 		</ol>
 	</div>
+</div>
 <!--</div>--><!-- /.blog-sidebar -->

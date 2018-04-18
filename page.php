@@ -8,7 +8,7 @@ if($sidebar) {?>
     <div class="container">
     <div class="row">
 
-        <div class="col-sm-8">
+        <div class="col-sm-9">
 <?php } ?>
 <?php if(!$sidebar && $layout == 'container') { ?>
     <div class="container">
@@ -25,7 +25,7 @@ if($sidebar) {?>
 <?php if($sidebar) {?>
 
         </div>
-    <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+    <div class="col-sm-3">
         <?php get_sidebar(); ?>
     </div>
     </div>

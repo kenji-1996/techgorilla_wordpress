@@ -11,12 +11,14 @@ function techgorilla_styles() {
     wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/vendor/font-awesome/css/font-awesome.min.css' );
     wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/vendor/magnific-popup/magnific-popup.css' );
     wp_enqueue_style( 'creative', get_template_directory_uri() . '/css/creative.min.css' );
+    wp_enqueue_style( 'magnific-pop', get_template_directory_uri() . '/vendor/magnific-popup/magnific-popup.css' );
 }
 add_action( 'wp_enqueue_scripts', 'techgorilla_styles' );
 
 
 //Include scripts
 function techgorilla_scripts() {
+    wp_enqueue_script( 'prefix', get_template_directory_uri() . '/js/prefix.min.js');//, array( 'jquery' ), '3.3.6', true);
     //wp_enqueue_script( 'jquery', get_template_directory_uri() . '/vendor/jquery/jquery.min.js' );
 	if(!is_admin()) {//Replace jquery with googles CDN
     	wp_deregister_script( 'jquery' );
@@ -43,6 +45,8 @@ add_action('wp_print_styles', 'techgorilla_google_fonts');
 /**
  * Theme support
  */
+remove_filter( 'the_content', 'wpautop' );
+remove_filter( 'the_excerpt', 'wpautop' );
 add_theme_support( 'title-tag' );
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'customize-selective-refresh-widgets' );
@@ -251,6 +255,7 @@ function contenthead_meta_box( $post ) { ?>
     <?php
     wp_nonce_field( basename( __FILE__ ), 'contenthead_nonce' );
     $techgorilla_sidebar = get_post_meta( $post->ID, '_techgorilla_sidebar', true );
+    $techgorilla_meta_data = get_post_meta( $post->ID, '_techgorilla_meta_data', true );
     $techgorilla_post_border = get_post_meta( $post->ID, '_techgorilla_post_border', true );
     $techgorilla_layout = get_post_meta( $post->ID, '_techgorilla_layout', true );
     ?>
@@ -263,6 +268,10 @@ function contenthead_meta_box( $post ) { ?>
     <p>
         <label for="techgorilla-post-class"><?php _e( "Sidebar", 'example' ); ?></label>
         <input class="widefat" type="checkbox" name="techgorilla-sidebar" value="<?php echo $techgorilla_sidebar ?>" <?php if($techgorilla_sidebar == 1) { echo 'checked'; } ?> size="30"/>
+    </p>
+    <p>
+        <label for="techgorilla-post-class"><?php _e( "Meta data", 'example' ); ?></label>
+        <input class="widefat" type="checkbox" name="techgorilla-meta-data" value="<?php echo $techgorilla_meta_data ?>" <?php if($techgorilla_meta_data == 1) { echo 'checked'; } ?> size="30"/>
     </p>
     <p>
         <label for="techgorilla-post-class"><?php _e( "Post Border", 'example' ); ?></label>
@@ -308,6 +317,9 @@ function techgorilla_save_post_class_meta( $post_id, $post ) {
      */
     $techgorilla_sidebar = isset($_POST['techgorilla-sidebar']) ? '1' : '0';
     update_post_meta($post_id, '_techgorilla_sidebar', $techgorilla_sidebar);
+
+    $techgorilla_meta_data = isset($_POST['techgorilla-meta-data']) ? '1' : '0';
+    update_post_meta($post_id, '_techgorilla_meta_data', $techgorilla_meta_data);
 
     $techgorilla_post_border = isset($_POST['techgorilla-post-border']) ? '1' : '0';
     update_post_meta($post_id, '_techgorilla_post_border', $techgorilla_post_border);
