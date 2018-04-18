@@ -436,6 +436,7 @@ header.contenthead p {
     -o-background-size: cover;
     background-size: cover;
 	border:0;
+    display: block;
 }
 
 .portfolio-box .portfolio-box-caption {
