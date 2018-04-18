@@ -1,4 +1,4 @@
-# TechGorilla Wordpress Theme, based on ['StartBootstrap'](https://startbootstrap.com/template-overviews/creative/)
+# TechGorilla Wordpress Theme, based on ['StartBootstrap's Bootstrap 4 theme "Creative"'](https://startbootstrap.com/template-overviews/creative/)
 
 TechGorilla is a website development business that primarily makes CMS based websites, most notably Wordpress and Shopify.
 
