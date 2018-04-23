@@ -10,7 +10,13 @@
 
     <?php wp_head();?>
 
-    <?php $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); ?>
+    <?php
+    $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
+    $header = get_post_meta( get_the_ID(), '_techgorilla_header', TRUE );
+    $navbar_sticky = get_post_meta( get_the_ID(), '_techgorilla_navbar_sticky', TRUE );
+    $navbar_shrink = get_post_meta( get_the_ID(), '_techgorilla_navbar_shrink', TRUE );
+    $navbar_shrink_fill = get_post_meta( get_the_ID(), '_techgorilla_navbar_shrink_fill', TRUE );
+    ?>
     <style>
         header.contenthead {
             background:linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url("<?php if(has_post_thumbnail()) { echo $backgroundImg[0]; }else{ echo get_option('siteimage');  } ?>");
@@ -21,6 +27,7 @@
             -o-background-size: cover;
             background-size: cover;
         }
+        <?php if( $navbar_shrink_fill) { echo 'body { margin-top: 68px; }'; }?>
         header.contenthead {
              <?php
             if(have_posts() && is_archive() )
@@ -43,7 +50,7 @@
 </head>
 
 <body id="page-top" style="background-color: rgba(10,10,10,1);">
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-dark <?php if(!$navbar_sticky) {echo '';}else{ echo 'fixed-top';}  ?> <?php if($navbar_shrink) {echo 'no-navbar-js navbar-shrink';}  ?>" id="mainNav">
         <div class="container">
             <div class='navbar-main-name'>
                 <div class='site-title'>
@@ -75,32 +82,34 @@
     </nav>
 
     <div id="wrap">
-        <?php if(!is_front_page()) { ?>
+        <?php if(!$header && is_page()) { ?>
+            <?php }else{ ?>
+        <?php if (!is_front_page()) { ?>
         <header class="contenthead text-center text-white d-flex">
             <div class="container my-auto" style="">
                 <div class="row">
                     <div class="col-lg-10 mx-auto">
-                        <?php if ( have_posts() && is_archive()) { ?>
+                        <?php if (have_posts() && is_archive()) { ?>
                             <h1 class="text-uppercase">
                                 <strong>
-                                 <?php the_archive_title( ); ?>
+                                    <?php the_archive_title(); ?>
                                 </strong>
                             </h1>
                             <hr>
-                        <?php } else if(is_search()) { ?>
+                        <?php } else if (is_search()) { ?>
                             <h1 class="text-uppercase">
-                                <?php if(have_posts()) { ?>
+                                <?php if (have_posts()) { ?>
                                     <strong>Results:
                                         <?php the_search_query(); ?>
                                     </strong>
-                                <?php }else{ ?>
+                                <?php } else { ?>
                                     <strong>
-                                        <?php _e( 'Nothing Found', 'techgorilla' ); ?>
+                                        <?php _e('Nothing Found', 'techgorilla'); ?>
                                     </strong>
                                 <?php } ?>
                             </h1>
                             <hr>
-                        <?php }else if (! empty( $post->post_title )) { ?>
+                        <?php } else if (!empty($post->post_title)) { ?>
                             <h1 class="text-uppercase">
                                 <strong><?php the_title(); ?></strong>
                             </h1>
@@ -113,5 +122,7 @@
                 </div>
             </div>
         </header>
-        <?php } ?>
+        <?php }
+        }
+
 

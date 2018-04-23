@@ -21,7 +21,7 @@ function techgorilla_scripts() {
     	wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js');
     }
     wp_enqueue_script('jquery');
-    wp_enqueue_script( 'prefix', get_template_directory_uri() . '/js/jquery.lazy.min.js',array( 'jquery' ),null,false);
+    wp_enqueue_script( 'lazy-load', get_template_directory_uri() . '/js/jquery.lazy.min.js',array( 'jquery' ),null,true);
     wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/vendor/bootstrap/js/bootstrap.min.js', array( 'jquery','scrollreveal' ), '3.3.6', true );
     wp_enqueue_script( 'jquery-easing', get_template_directory_uri() . '/vendor/jquery-easing/jquery.easing.min.js',array( 'jquery' ),null,true  );
     wp_enqueue_script( 'scrollreveal', get_template_directory_uri() . '/vendor/scrollreveal/scrollreveal.min.js',array( 'jquery' ),null,true  );
@@ -260,14 +260,27 @@ function contenthead_meta_box( $post ) { ?>
     wp_nonce_field( basename( __FILE__ ), 'contenthead_nonce' );
     $techgorilla_sidebar = get_post_meta( $post->ID, '_techgorilla_sidebar', true );
     $techgorilla_meta_data = get_post_meta( $post->ID, '_techgorilla_meta_data', true );
+    $techgorilla_header = get_post_meta( $post->ID, '_techgorilla_header', true );
+    $techgorilla_navbar_sticky= get_post_meta( $post->ID, '_techgorilla_navbar_sticky', true );
+    $techgorilla_navbar_shrink= get_post_meta( $post->ID, '_techgorilla_navbar_shrink', true );
+    $techgorilla_navbar_shrink_fill= get_post_meta( $post->ID, '_techgorilla_navbar_shrink_fill', true );
     $techgorilla_post_border = get_post_meta( $post->ID, '_techgorilla_post_border', true );
     $techgorilla_layout = get_post_meta( $post->ID, '_techgorilla_layout', true );
+
+    //Set as default enabled
+    if ($techgorilla_navbar_sticky == null) {$techgorilla_navbar_sticky = 1;}
+    if ($techgorilla_header == null) {$techgorilla_header = 1;}
     ?>
 
     <p>
         <label for="techgorilla-post-class"><?php _e( "Add a custom CSS class, which will be applied to WordPress' post class.", 'example' ); ?></label>
         <br />
         <input class="widefat" type="text" name="techgorilla-post-class" id="techgorilla-post-class" value="<?php echo esc_attr( get_post_meta( $post->ID, 'contenthead', true ) ); ?>" size="30" />
+    </p>
+    <hr>
+    <p>
+        <label for="techgorilla-post-class"><?php _e( "Show Header", 'example' ); ?></label>
+        <input class="widefat" type="checkbox" name="techgorilla-header" value="<?php echo $techgorilla_header ?>" <?php if($techgorilla_header == 1) { echo 'checked'; } ?> size="30"/>
     </p>
     <p>
         <label for="techgorilla-post-class"><?php _e( "Sidebar", 'example' ); ?></label>
@@ -288,6 +301,19 @@ function contenthead_meta_box( $post ) { ?>
             <option value="fullwidth" <?php selected($techgorilla_layout, 'fullwidth'); ?>>Full Width</option>
             <option value="none" <?php selected($techgorilla_layout, 'none'); ?>>No formatting</option>
         </select>
+    </p>
+    <hr>
+    <p>
+        <label for="techgorilla-post-class"><?php _e( "Navbar sticky", 'example' ); ?></label>
+        <input class="widefat" type="checkbox" name="techgorilla-navbar-sticky" value="<?php echo $techgorilla_navbar_sticky ?>" <?php if($techgorilla_navbar_sticky == 1) { echo 'checked'; } ?> size="30"/>
+    </p>
+    <p>
+        <label for="techgorilla-post-class"><?php _e( "Force navbar shrink", 'example' ); ?></label>
+        <input class="widefat" type="checkbox" name="techgorilla-navbar-shrink" value="<?php echo $techgorilla_navbar_shrink ?>" <?php if($techgorilla_navbar_shrink == 1) { echo 'checked'; } ?> size="30"/>
+    </p>
+    <p>
+        <label for="techgorilla-post-class"><?php _e( "Navbar shrink opacity", 'example' ); ?></label>
+        <input class="widefat" type="checkbox" name="techgorilla-navbar-shrink-fill" value="<?php echo $techgorilla_navbar_shrink_fill ?>" <?php if($techgorilla_navbar_shrink_fill == 1) { echo 'checked'; } ?> size="30"/>
     </p>
 <?php }
 
@@ -321,6 +347,18 @@ function techgorilla_save_post_class_meta( $post_id, $post ) {
      */
     $techgorilla_sidebar = isset($_POST['techgorilla-sidebar']) ? '1' : '0';
     update_post_meta($post_id, '_techgorilla_sidebar', $techgorilla_sidebar);
+
+    $techgorilla_header = isset($_POST['techgorilla-header']) ? '1' : '0';
+    update_post_meta($post_id, '_techgorilla_header', $techgorilla_header);
+
+    $techgorilla_navbar_sticky = isset($_POST['techgorilla-navbar-sticky']) ? '1' : '0';
+    update_post_meta($post_id, '_techgorilla_navbar_sticky', $techgorilla_navbar_sticky);
+
+    $techgorilla_navbar_shrink = isset($_POST['techgorilla-navbar-shrink']) ? '1' : '0';
+    update_post_meta($post_id, '_techgorilla_navbar_shrink', $techgorilla_navbar_shrink);
+
+    $techgorilla_navbar_shrink_fill = isset($_POST['techgorilla-navbar-shrink-fill']) ? '1' : '0';
+    update_post_meta($post_id, '_techgorilla_navbar_shrink_fill', $techgorilla_navbar_shrink_fill);
 
     $techgorilla_meta_data = isset($_POST['techgorilla-meta-data']) ? '1' : '0';
     update_post_meta($post_id, '_techgorilla_meta_data', $techgorilla_meta_data);
