@@ -20,4 +20,3 @@ $meta = get_post_meta( get_the_ID(), '_techgorilla_meta_data', TRUE );
             <?php if($border) {?> </div><?php } ?>
     </div>
 <?php } ?>
-<br/>

@@ -27,7 +27,7 @@
             -o-background-size: cover;
             background-size: cover;
         }
-        <?php if( $navbar_shrink_fill) { echo 'body { margin-top: 68px; }'; }?>
+        <?php if( $navbar_shrink_fill) { echo 'body { margin-top: 83px; } @media (min-width: 992px) { body { margin-top: 68px; } } '; }?>
         header.contenthead {
              <?php
             if(have_posts() && is_archive() )
