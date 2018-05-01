@@ -99,16 +99,16 @@
                 </h6>
                 <hr class="accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                 <p>
-                    <a href="#!" class="dark-grey-text">Security & Performance</a>
+                    <a href="/search-engine-ranking" class="dark-grey-text">Search Engine Optimisation</a>
                 </p>
                 <p>
-                    <a href="#!" class="dark-grey-text">Website creation & Maintenance </a>
+                    <a href="/services" class="dark-grey-text">Website creation & Maintenance </a>
                 </p>
                 <p>
-                    <a href="#!" class="dark-grey-text">Hosting & Setup</a>
+                    <a href="/hosting" class="dark-grey-text">Hosting & Setup</a>
                 </p>
                 <p>
-                    <a href="#!" class="dark-grey-text">Graphic Design & Updates</a>
+                    <a href="/graphic-design/" class="dark-grey-text">Graphic Design & Updates</a>
                 </p>
             </div>
             <!--/.Second column-->
@@ -120,16 +120,16 @@
                 </h6>
                 <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                 <p>
-                    <a href="#!" class="dark-grey-text">Get a quote</a>
+                    <a href="/quote" class="dark-grey-text">Get a quote</a>
                 </p>
                 <p>
-                    <a href="#!" class="dark-grey-text">FAQ</a>
+                    <a href="/faq" class="dark-grey-text">FAQ</a>
                 </p>
                 <p>
-                    <a href="#!" class="dark-grey-text">Our staff</a>
+                    <a href="/staff" class="dark-grey-text">Our staff</a>
                 </p>
                 <p>
-                    <a href="#!" class="dark-grey-text">Terms of Service</a>
+                    <a href="/terms-of-service" class="dark-grey-text">Terms of Service</a>
 
                 </p>
             </div>
@@ -142,10 +142,10 @@
                 </h6>
                 <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                 <!--<p><i class="fa fa-home mr-3"></i> New York, NY 10012, US</p>-->
-                <p>
-                    <i class="fa fa-envelope mr-3"></i> info@techgorilla.io</p>
-                <p>
-                    <i class="fa fa-phone mr-3"></i> + 61 416 723 376</p>
+                <a href="mailto:info@techgorilla.io">
+                    <i class="fa fa-envelope mr-3"></i> info@techgorilla.io</a>
+                <a href="tel:+61-416-723-376">
+                    <i class="fa fa-phone mr-3"></i> + 61 416 723 376</a>
                 <!--<p><i class="fa fa-print mr-3"></i> + 01 234 567 89</p>-->
             </div>
             <!--/.Fourth column-->

@@ -23,12 +23,13 @@
         -moz-border-radius: 0 !important;
         border-radius: 0 !important;
     }
-    @media (min-width: 992px) {
-
-    }
-    @media (max-width: 767.98px) {
+    @media (max-width: 992px) {
         input#s {
-            padding: 0;
+            padding: .5rem 1rem;
+            padding-right: 0;
+            padding-left: 0;
+            color: rgba(10, 10, 10, 0.7);
+
         }
     }
 
