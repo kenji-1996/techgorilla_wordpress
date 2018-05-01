@@ -425,10 +425,16 @@ function wpb_custom_new_menu() {
 add_action( 'init', 'wpb_custom_new_menu' );
 add_filter( 'nav_menu_link_attributes', 'techgorilla_menu_add_class', 10, 3 );
 function techgorilla_menu_add_class( $atts, $item, $args ) {
+    if (in_array('menu-item-has-children', $item->classes)) {
+        $atts['aria-haspopup'] = 'true';
+    }
     $class = 'nav-link js-scroll-trigger'; // or something based on $item
+
     $atts['class'] = $class;
     return $atts;
 }
+
+
 function wpgood_nav_search( $items, $args ) {
     $items .= '<li>' . get_search_form( false ) . '</li>';
     return $items;

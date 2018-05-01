@@ -6,37 +6,45 @@
  * Time: 8:57 PM
  */?>
 <style>
-    #search-form input {
+    input#s {
         font-size: 11px;
         text-transform: uppercase;
         color: rgba(255, 255, 255, 0.7);
-        letter-spacing: 3px;
+        letter-spacing: 1px;
         font-family: roboto condensed,sans-serif;/*'Open Sans', 'Helvetica Neue', Arial, sans-serif;*/
         -webkit-transition: .4s ease-in-out 0s;
         -moz-transition: .4s ease-in-out 0s;
         transition: .4s ease-in-out 0s;
         -webkit-font-smoothing: antialiased;
-        border: 0px;
+        border: 0;
         padding: 0.5rem 1rem;
         background: rgba(0, 0, 0, 0);
         -webkit-border-radius: 0 !important;
         -moz-border-radius: 0 !important;
         border-radius: 0 !important;
     }
+    @media (min-width: 992px) {
 
-    #search-form input:focus {
-        color: #fff;
-        background-color: rgba(0, 0, 0, 0.7);
+    }
+    @media (max-width: 767.98px) {
+        input#s {
+            padding: 0;
+        }
     }
 
-    #search-form input:hover {
-        color: #fff;
-        background-color: rgba(0, 0, 0, 0.7);
+    input:focus#s {
+        color: rgba(10,10,10,1);
+        background-color: rgba(0, 0, 0, 0.0);
     }
 
-    #search-form textarea:focus, input:focus, input[type]:focus {
-        color: #fff;
-        background-color: rgba(0, 0, 0, 0.7);
+    input:hover#s {
+        color: rgba(10,10,10,1);
+        background-color: rgba(0, 0, 0, 0.0);
+    }
+
+    textarea:focus#s, input:focus#s, input[type]:focus#s {
+        color: rgba(10,10,10,1);
+        background-color: rgba(0, 0, 0, 0.0);
         border-color: rgba(229, 103, 23, 0.0);
         box-shadow: 0 1px 1px rgba(229, 103, 23, 0.0) inset, 0 0 8px rgba(229, 103, 23, 0.0);
         outline: 0 none;

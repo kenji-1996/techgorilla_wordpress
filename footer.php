@@ -31,9 +31,9 @@
 </footer>
 -->
 <!--Footer-->
-<footer class="page-footer font-small blue-grey lighten-5 pt-0 dark-theme">
+<footer class="page-footer font-small blue-grey lighten-5 pt-0 dark-theme fw-300" id="tg-footer">
 
-    <div style="background-color: #F05F40;" class="angle-div">
+    <div class="angle-div">
         <div class="container">
             <!--Grid row-->
             <div class="row py-4 d-flex align-items-center">
@@ -41,7 +41,7 @@
                 <!--Grid column-->
                 <div class="col-12 col-md-5 text-left mb-4 mb-md-0">
                     <h6 class="mb-0 white-text text-center text-md-left">
-                        <strong>Get connected with us on social networks!</strong>
+                        Get connected with us on social networks!
                     </h6>
                 </div>
                 <!--Grid column-->
@@ -82,8 +82,8 @@
 
             <!--First column-->
             <div class="col-md-3 col-lg-3 col-xl-3 mb-4">
-                <h6 class="text-uppercase font-weight-bold">
-                    <strong><?php echo get_bloginfo( 'name' ); ?></strong>
+                <h6 class="text-uppercase footer-h1">
+                    <?php echo get_bloginfo( 'name' ); ?>
                 </h6>
                 <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                 <p>
@@ -94,8 +94,8 @@
 
             <!--Second column-->
             <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4 dark-grey-text">
-                <h6 class="text-uppercase font-weight-bold">
-                    <strong>Services</strong>
+                <h6 class="text-uppercase footer-h1">
+                    Services
                 </h6>
                 <hr class="accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                 <p>
@@ -115,8 +115,8 @@
 
             <!--Third column-->
             <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4 dark-grey-text">
-                <h6 class="text-uppercase font-weight-bold">
-                    <strong>Useful links</strong>
+                <h6 class="text-uppercase footer-h1">
+                    Useful links
                 </h6>
                 <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                 <p>
@@ -137,8 +137,8 @@
 
             <!--Fourth column-->
             <div class="col-md-3 col-lg-3 col-xl-3 dark-grey-text">
-                <h6 class="text-uppercase font-weight-bold">
-                    <strong>Contact</strong>
+                <h6 class="text-uppercase footer-h1">
+                    Contact
                 </h6>
                 <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                 <!--<p><i class="fa fa-home mr-3"></i> New York, NY 10012, US</p>-->

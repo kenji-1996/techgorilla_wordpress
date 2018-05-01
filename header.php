@@ -51,7 +51,7 @@
 
 <body id="page-top" style="background-color: rgba(10,10,10,1);">
     <nav class="navbar navbar-expand-lg navbar-dark <?php if(!$navbar_sticky) {echo '';}else{ echo 'fixed-top';}  ?> <?php if($navbar_shrink) {echo 'no-navbar-js navbar-shrink';}  ?>" id="mainNav">
-        <div class="container">
+        <div class="container" id="nav-container">
             <div class='navbar-main-name'>
                 <div class='site-title'>
                     <a class="navbar-brand js-scroll-trigger" href="<?php echo get_bloginfo( 'wpurl' );?>"><?php echo get_bloginfo( 'name' ); ?></a>

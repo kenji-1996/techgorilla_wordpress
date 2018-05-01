@@ -95,7 +95,7 @@
 
                     </ul>
                     <div class="package-link">
-                        <a href="#" class="btn btn-success btn-buynow btn-lg">Order Now</a>
+                        <button data-toggle="modal" data-target="#myModal" data-package="Budget" class="btn btn-success btn-buynow btn-lg">Enquire Today</button>
                     </div>
                 </div>
             </div>
@@ -124,7 +124,7 @@
                         </li>
                     </ul>
                     <div class="package-link">
-                        <a href="#" class="btn btn-success btn-lg btn-buynow">Order Now</a>
+                        <button data-toggle="modal" data-target="#myModal" data-package="Premium"  class="btn btn-success btn-lg btn-buynow">Enquire Today</button>
                     </div>
                 </div>
             </div>
@@ -155,7 +155,7 @@
                         </li>
                     </ul>
                     <div class="package-link">
-                        <a href="#" class="btn btn-success btn-buynow btn-lg" target="_blank">Order Now</a>
+                        <button data-toggle="modal" data-target="#myModal" data-package="Business"  class="btn btn-success btn-buynow btn-lg">Enquire Today</button>
                     </div>
                 </div>
             </div>
@@ -188,7 +188,7 @@
                         </li>
                     </ul>
                     <div class="package-link">
-                        <a href="#" class="btn btn-success btn-lg btn-buynow" target="_blank">Order Now</a>
+                        <button data-toggle="modal" data-target="#myModal" data-package="Enterprise"  class="btn btn-success btn-lg btn-buynow">Enquire Today</button>
                     </div>
                 </div>
             </div>
@@ -197,12 +197,10 @@
 
         <div class="row" id="not-sure-row" style="padding-bottom: 50px;">
             <div class="col-md-12 text-center" style="margin-top:50px">
-                <h1 class="fw-300">All packages include 30-day Money-Back Guarantee</h1>
-                <p>The annual flat fee is 300$, this takes care of premium Australian server hosting, SSL Security, backups and on-going email and phone support.</p>
-                <strong>Only requires 50% deposit for work to start</strong>
+                <h1 class="fw-300">All packages include premium hosting and setup offered</h1>
+                <p>If you wish for us to host and maintain your website, the annual flat fee is 300$, this takes care of premium Australian server hosting, SSL Security, backups and on-going email and phone support.</p>
                 <!--<a href="/pricing/#compare" class="btn btn-info" onclick="$('#not-sure-row').hide();$('#compare-header-row').show();$('#comparison').show(); return false;">See full comparison</a>-->
-                <a href="#" class="btn btn-info">Order now</a>
-                <a href="#" class="btn btn-info">Get a quote</a>
+                <a href="#" class="btn btn-info">Learn more</a>
             </div>
         </div>
     </div>
@@ -368,7 +366,6 @@
                     <h1 class="fw-300" style="margin-bottom:45px;">Package Extras</h1>
                 </div>
             </div>
-
             <div class="row">
                 <div class="col-md-3 col-sm-6">
                     <div class="package-block package-addon ">
@@ -389,13 +386,12 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md-3 col-sm-6">
                     <div class="package-block package-addon ">
                         <div class="package-section">
                             <h3 class="package-title">Additional Page Design</h3>
                             <p>Get extra pages designed, including events, testimonials, sales etc.</p>
-                            <p style="font-size:12px">One time payment, starting at 50 but cost varies depending on complexity and time taken.</p>
+                            <p style="font-size:12px">One time payment, starting at 99 but cost varies depending on complexity and time taken.</p>
                         </div>
                         <div class="row">
                             <div class="col-sm-12">
@@ -461,12 +457,10 @@
 
                 <div class="col-sm-9 text-white-highlight">
                     <h2>Ready to revolutionize your business?</h2>
-                        <h4>Risk free money back guarantee</h4>
+                    <h4>Get a quote today!</h4>
                 </div>
                 <div class="col-sm-3">
-                    <a class="btn btn-light btn-xl sr-button pull-right" href="#" style="margin-top:12px">Get started</a>
-
-
+                    <button class="btn btn-light btn-xl sr-button pull-right" data-toggle="modal" data-target="#myModal" style="margin-top:12px">Get started</button>
                 </div>
             </div>
         </div>
@@ -479,7 +473,7 @@
             <h1 class="fw-300">Customer Feedback</h1>
         </div>
         <div class='row'>
-            <div class='col-md-8 mx-auto'>
+            <div class='col-md-12 col-lg-8 mx-auto'>
                 <div class="carousel slide" data-ride="carousel" id="quote-carousel">
                     <!-- Bottom Carousel Indicators -->
                     <ol class="carousel-indicators">
@@ -535,4 +529,26 @@
             </div>
         </div>
     </div>
+</div>
+
+<div class="container">
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Enquiry Form</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    [contact-form-7 id="262" title="Order form"]
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 </div>
